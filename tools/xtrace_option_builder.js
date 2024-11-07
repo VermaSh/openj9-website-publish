@@ -2312,14 +2312,13 @@ function getMethodResultString() {
 	for (var i = 0; i < methodCounter; i++) {
 		var methodListElement = document.getElementById("method_" + i);
 		if (methodListElement != null) {
-			methodOptionPresent = true;
 			var methodTextValue = document.getElementById("meth_text_" + i).value;
 			if (methodTextValue != "") {
-				methodString += methodTextValue;
 				if (document.getElementById("meth_args_" + i).checked) {
-					methodString += "()";
+					methodString += methodTextValue + "()";
+					methodOptionPresent = true;
+					methodString += ",";
 				}
-				methodString += ",";
 			}
 		}
 	}
